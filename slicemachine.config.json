@@ -1,0 +1,6 @@
+{
+  "libraries": ["./src/slices"],
+  "adapter": "@slicemachine/adapter-next",
+  "repositoryName": "test-prismic-full-website-demo",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}
