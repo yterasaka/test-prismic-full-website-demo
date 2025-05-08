@@ -9,7 +9,16 @@ import { createClient } from "@/prismicio";
  * This endpoint handles previews that are launched from the Page Builder.
  */
 export async function GET(request: NextRequest) {
-  const client = createClient({ fetchOptions: { cache: "no-cache" } });
+  const client = createClient({
+    fetchOptions: {
+      cache: "no-store",
+      next: { revalidate: 0 },
+    },
+  });
 
-  return await redirectToPreviewURL({ client, request });
+  // 簡略化したバージョンに変更
+  return await redirectToPreviewURL({
+    client,
+    request,
+  });
 }
